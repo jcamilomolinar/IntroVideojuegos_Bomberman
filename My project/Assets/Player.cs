@@ -6,37 +6,52 @@ public class Player : MonoBehaviour
 {
 
     [SerializeField]
-    private SpriteRenderer spriteRenderer;
+    public float velocidad = 5f;
     private Rigidbody2D rb;
     private Animator animator;
 
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
-    {
+    {   
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");
 
+        Vector2 movement = new Vector2(moveX, moveY) * velocidad;
+        rb.velocity = movement;
+    
         if (moveX > 0)
         {
-            animator.SetTrigger("Right");
-        }
+            animator.SetBool("Right", true);
+            animator.SetBool("Left", false);
+            animator.SetBool("Up", false);
+            animator.SetBool("Down", false);
+        } 
         else if (moveX < 0)
         {
-            animator.SetTrigger("Left");
+            animator.SetBool("Right", false);
+            animator.SetBool("Left", true);
+            animator.SetBool("Up", false);
+            animator.SetBool("Down", false);
         }
         else if (moveY > 0)
         {
-            animator.SetTrigger("Up");
+            animator.SetBool("Right", false);
+            animator.SetBool("Left", false);
+            animator.SetBool("Up", true);
+            animator.SetBool("Down", false);
         }
         else if (moveY < 0)
         {
-            animator.SetTrigger("Down");
+            animator.SetBool("Right", false);
+            animator.SetBool("Left", false);
+            animator.SetBool("Up", false);
+            animator.SetBool("Down", true);
         }
     }
+
 }
