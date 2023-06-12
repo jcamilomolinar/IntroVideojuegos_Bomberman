@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerAnimation : MonoBehaviour
 {
 
     [SerializeField]
@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponentInChildren<Rigidbody2D>();
     }
 
     void Update()
@@ -55,3 +55,4 @@ public class Player : MonoBehaviour
     }
 
 }
+
