@@ -7,6 +7,7 @@ public class PlayerMove : MonoBehaviour, IDamageable
 
     [SerializeField]
     public float speed;
+    public float DisappearDelay;
     private Rigidbody2D rb;
     private Animator animator;
     [field:SerializeField]
@@ -74,8 +75,14 @@ public class PlayerMove : MonoBehaviour, IDamageable
             animator.SetLayerWeight(1, 0);
             animator.SetBool("Death", true);
             speed = 0;
-            //gameObject.SetActive(false);
+            StartCoroutine(DisappearAfterDelay(DisappearDelay));
         }
+    }
+
+    IEnumerator DisappearAfterDelay(float Delay)
+    {
+        yield return new WaitForSeconds(Delay);
+        gameObject.SetActive(false);
     }
 
 }
