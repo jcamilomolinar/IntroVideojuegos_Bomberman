@@ -279,7 +279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534259351}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.02, y: 0.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4966,7 +4966,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1715183710}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -66, y: -9, z: 0}
+  m_LocalPosition: {x: -65.97, y: -9.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5024,6 +5024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 3
+  <TotalHealthPoints>k__BackingField: 1
 --- !u!114 &1715183715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5038,7 +5039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputKey: 304
   bombGame: {fileID: 934137007621104143, guid: 9ee76c6164ae72444b4285a4058851a1, type: 3}
-  bombTimerLenght: 3
+  bombTimerLenght: 4
   bombStarterAmount: 1
   explosionLayerMask:
     serializedVersion: 2
