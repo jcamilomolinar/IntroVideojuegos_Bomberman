@@ -5037,7 +5037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputKey: 304
-  bombGame: {fileID: 1524012369310022080, guid: 9ee76c6164ae72444b4285a4058851a1, type: 3}
+  bombGame: {fileID: 934137007621104143, guid: 9ee76c6164ae72444b4285a4058851a1, type: 3}
   bombTimerLenght: 3
   bombStarterAmount: 1
   explosionLayerMask:
