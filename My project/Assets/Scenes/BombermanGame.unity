@@ -5338,8 +5338,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb3eaa6aff469f4f9b66615f21176f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  DisappearDelay: 0
+  speed: 5
+  DisappearDelay: 2
   <TotalHealthPoints>k__BackingField: 1
 --- !u!114 &1715183715
 MonoBehaviour:
@@ -5357,6 +5357,9 @@ MonoBehaviour:
   bombGame: {fileID: 934137007621104143, guid: 9ee76c6164ae72444b4285a4058851a1, type: 3}
   bombTimerLenght: 4
   bombStarterAmount: 1
+  explosionStart: {fileID: 0}
+  explosionMiddle: {fileID: 0}
+  explosionEnd: {fileID: 0}
   explosionLayerMask:
     serializedVersion: 2
     m_Bits: 0
