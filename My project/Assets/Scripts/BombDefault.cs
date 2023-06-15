@@ -13,7 +13,9 @@ public class BombDefault : MonoBehaviour
     private int bombsInventory;
 
     [Header("Explosion")]
-    //public Explosion explosionPrefab;
+    public Explosion explosionStart;
+    public Explosion explosionMiddle;
+    public Explosion explosionEnd;
     public LayerMask explosionLayerMask;
     public float explosionDuration = 1f;
     public int explosionRadius = 1;
@@ -47,14 +49,13 @@ public class BombDefault : MonoBehaviour
         position.x = Mathf.Round(position.x);
         position.y = Mathf.Round(position.y);
 
-        //Explosion explosion = Instantiate(explosionPrefab, position, Quaternion.identity);
-        //explosion.SetActiveRenderer(explosion.start);
-        //explosion.DestroyAfter(explosionDuration);
+        Explosion explosion = Instantiate(explosionStart, position, Quaternion.identity);
+        explosion.DestroyAfter(explosionDuration);
 
-        //Explode(position, Vector2.up, explosionRadius);
-        //Explode(position, Vector2.down, explosionRadius);
-        //Explode(position, Vector2.left, explosionRadius);
-        //Explode(position, Vector2.right, explosionRadius);
+        Explode(position, Vector2.up, explosionRadius);
+        Explode(position, Vector2.down, explosionRadius);
+        Explode(position, Vector2.left, explosionRadius);
+        Explode(position, Vector2.right, explosionRadius);
 
         Destroy(bomb.gameObject);
         bombsInventory++;
@@ -66,6 +67,20 @@ public class BombDefault : MonoBehaviour
         {
             other.isTrigger = false;
         }
+    }
+
+    private void Explode(Vector2 position, Vector2 direction, int radius)
+    {
+        for (int i = 1; i < radius; i++) {
+            position += direction;
+            Explosion explosion = Instantiate(explosionMiddle, position, Quaternion.identity);
+            explosion.SetDirection(direction);
+            explosion.DestroyAfter(explosionDuration);
+        }
+        position += direction;
+        Explosion explosionFin = Instantiate(explosionEnd, position, Quaternion.identity);
+        explosionFin.SetDirection(direction);
+        explosionFin.DestroyAfter(explosionDuration);
     }
 
     // Update is called once per frame
