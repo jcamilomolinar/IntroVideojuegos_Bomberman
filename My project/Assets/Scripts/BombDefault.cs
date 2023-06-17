@@ -73,6 +73,13 @@ public class BombDefault : MonoBehaviour
     {
         for (int i = 1; i < radius; i++) {
             position += direction;
+            Collider2D checkRadius = Physics2D.OverlapCircle(position, 0);
+            if (checkRadius != null)
+            {
+                print("Hay algo dentro de la explosion");
+                position -= direction;
+                break;
+            }
             Explosion explosion = Instantiate(explosionMiddle, position, Quaternion.identity);
             explosion.SetDirection(direction);
             explosion.DestroyAfter(explosionDuration);

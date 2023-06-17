@@ -6,7 +6,7 @@ public class PlayerMove : MonoBehaviour, IDamageable
 {
 
     [SerializeField]
-    public float speed;
+    public float speed = 3;
     public float DisappearDelay;
     private Rigidbody2D rb;
     private Animator animator;
