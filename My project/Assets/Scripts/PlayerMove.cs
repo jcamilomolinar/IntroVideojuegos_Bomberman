@@ -64,8 +64,6 @@ public class PlayerMove : MonoBehaviour, IDamageable
         {
             animator.SetLayerWeight(1, 0);
         }
-
-        TakeHit();
     }
 
     public void TakeHit()
