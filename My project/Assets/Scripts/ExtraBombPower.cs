@@ -9,7 +9,7 @@ public class ExtraBombPower : MonoBehaviour
             BombDefault bomb = collision.gameObject.GetComponent<BombDefault>();
             if (bomb != null)
             {
-                bomb.bombStarterAmount += 1;
+                bomb.bombsInventory += 1;
             }
             Destroy(gameObject);
         }

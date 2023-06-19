@@ -10,7 +10,7 @@ public class BombDefault : MonoBehaviour
     public GameObject bombGame;
     public float bombTimerLenght = 3f;
     public int bombStarterAmount = 1;
-    private int bombsInventory;
+    public int bombsInventory;
 
     [Header("Explosion")]
     public Explosion explosionStart;
