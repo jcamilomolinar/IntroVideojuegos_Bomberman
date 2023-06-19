@@ -10,13 +10,12 @@ public class Destructible: MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {   
-        print("Hay algo dentro de la explosion");
         if (other.gameObject.CompareTag("Explosion"))
         {
             Destroy(gameObject);
             Vector2 position = transform.position;
 
-            if (Random.value < 1)
+            if (Random.value < 0.3)
             {
                 float randomValue = Random.value;
                 if (randomValue < 0.33)

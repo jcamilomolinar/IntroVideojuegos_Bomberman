@@ -84,9 +84,9 @@ public class PlayerMove : MonoBehaviour, IDamageable
         gameObject.SetActive(false);
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {   
-        if (other.gameObject.CompareTag("Explosion"))
+        if (collision.gameObject.CompareTag("Explosion"))
         {
             TakeHit();
         }
