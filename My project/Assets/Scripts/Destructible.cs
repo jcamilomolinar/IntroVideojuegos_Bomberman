@@ -10,6 +10,7 @@ public class Destructible: MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {   
+        print("Hay algo dentro de la explosion");
         if (other.gameObject.CompareTag("Explosion"))
         {
             Destroy(gameObject);

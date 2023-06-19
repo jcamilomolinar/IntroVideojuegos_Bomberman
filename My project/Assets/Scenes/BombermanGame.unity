@@ -11144,7 +11144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  DisappearDelay: 2
+  DisappearDelay: 3
   <TotalHealthPoints>k__BackingField: 1
 --- !u!114 &1715183715
 MonoBehaviour:
