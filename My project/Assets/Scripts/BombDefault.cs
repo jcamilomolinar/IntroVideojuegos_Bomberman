@@ -19,10 +19,12 @@ public class BombDefault : MonoBehaviour
     public LayerMask explosionLayerMask;
     public float explosionDuration = 1f;
     public int explosionRadius = 1;
+
     private void OnEnable()
     {
         bombsInventory = bombStarterAmount;
     }
+
     private void Update()
     {
         if (bombsInventory > 0 && Input.GetKeyDown(inputKey))
@@ -30,10 +32,12 @@ public class BombDefault : MonoBehaviour
             StartCoroutine(PlaceBomb());
         }
     }
+
     void Start()
     {
         
     }
+    
     private IEnumerator PlaceBomb()
     {
         Vector2 position = transform.position;
