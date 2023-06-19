@@ -9,7 +9,7 @@ public class Destructible: MonoBehaviour
     public BlastRadiusPower blastRadiusPower;
 
     void OnTriggerEnter2D(Collider2D other)
-    {
+    {   
         if (other.gameObject.CompareTag("Explosion"))
         {
             Destroy(gameObject);

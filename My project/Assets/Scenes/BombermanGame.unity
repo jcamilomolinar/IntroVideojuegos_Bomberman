@@ -11144,7 +11144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  DisappearDelay: 0
+  DisappearDelay: 2
   <TotalHealthPoints>k__BackingField: 1
 --- !u!114 &1715183715
 MonoBehaviour:
@@ -11162,6 +11162,7 @@ MonoBehaviour:
   bombGame: {fileID: 934137007621104143, guid: 9ee76c6164ae72444b4285a4058851a1, type: 3}
   bombTimerLenght: 4
   bombStarterAmount: 1
+  bombsInventory: 0
   explosionStart: {fileID: 2481699084011419950, guid: 67d37378159f4934db2d771cd65fc5bd, type: 3}
   explosionMiddle: {fileID: 6844701945694314599, guid: f1067e5463833a04e9f39ef0e7de1165, type: 3}
   explosionEnd: {fileID: 9010678703881019718, guid: b33794461c47a1544805b4d260bf6c66, type: 3}
