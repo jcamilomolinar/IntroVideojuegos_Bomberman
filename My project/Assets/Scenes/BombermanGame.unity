@@ -11171,7 +11171,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   explosionDuration: 1
-  explosionRadius: 1
+  explosionRadius: 3
 --- !u!1001 &1759118797
 PrefabInstance:
   m_ObjectHideFlags: 0

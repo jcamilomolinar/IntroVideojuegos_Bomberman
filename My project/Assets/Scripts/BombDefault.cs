@@ -82,7 +82,7 @@ public class BombDefault : MonoBehaviour
             if (checkRadius.CompareTag("Unbreakable")){
                 Debug.Log("Colision con bloque indestructible");
                 return;
-            }
+                }
             
         }
 
@@ -92,14 +92,28 @@ public class BombDefault : MonoBehaviour
             checkRadius = Physics2D.OverlapCircle(position, 0);
             if (checkRadius != null)
             {
-                position -= direction;
-                break;
+                if (checkRadius.CompareTag("Unbreakable") || checkRadius.CompareTag("Breakable"))
+                {
+                    position -= direction;
+                    break;
+                }
             }
             Explosion explosion = Instantiate(explosionMiddle, position, Quaternion.identity);
             explosion.SetDirection(direction);
             explosion.DestroyAfter(explosionDuration);
         }
+
         position += direction;
+        checkRadius = Physics2D.OverlapCircle(position, 0);
+        if (checkRadius != null)
+        {
+            if (checkRadius.CompareTag("Unbreakable"))
+            {
+                Debug.Log("Colision con bloque indestructible");
+                return;
+            }
+
+        }
         Explosion explosionFin = Instantiate(explosionEnd, position, Quaternion.identity);
         explosionFin.SetDirection(direction);
         explosionFin.DestroyAfter(explosionDuration);
