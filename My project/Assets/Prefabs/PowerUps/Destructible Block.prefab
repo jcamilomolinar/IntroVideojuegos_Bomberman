@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1041288247052053315}
   - component: {fileID: 1041288247052053341}
   - component: {fileID: 1041288247052053342}
+  - component: {fileID: 4566882871297304166}
   m_Layer: 0
   m_Name: Destructible Block
   m_TagString: Breakable
@@ -127,3 +128,23 @@ MonoBehaviour:
   speedPower: {fileID: 2619734755120035453, guid: 974089979561adc408f431227ab71aac, type: 3}
   extraBombPower: {fileID: -9067913563953114068, guid: 20c38152632be7f4eae4286a3469169b, type: 3}
   blastRadiusPower: {fileID: 1742566173133255522, guid: 7e43e7d445fae1e448f4f35520172d6b, type: 3}
+--- !u!95 &4566882871297304166
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041288247052053313}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 78119c17566066541aa81166f4bdd33e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
