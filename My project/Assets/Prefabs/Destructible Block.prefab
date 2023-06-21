@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1041288247052053315}
   - component: {fileID: 1041288247052053341}
   - component: {fileID: 1041288247052053342}
-  - component: {fileID: 4566882871297304166}
+  - component: {fileID: -5337879931239093276}
   m_Layer: 0
   m_Name: Destructible Block
   m_TagString: Breakable
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 4707ec6bcb84fed428e044aa80a5e3e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -128,7 +128,8 @@ MonoBehaviour:
   speedPower: {fileID: 2619734755120035453, guid: 974089979561adc408f431227ab71aac, type: 3}
   extraBombPower: {fileID: -9067913563953114068, guid: 20c38152632be7f4eae4286a3469169b, type: 3}
   blastRadiusPower: {fileID: 1742566173133255522, guid: 7e43e7d445fae1e448f4f35520172d6b, type: 3}
---- !u!95 &4566882871297304166
+  DisappearDelay: 1
+--- !u!95 &-5337879931239093276
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -138,7 +139,7 @@ Animator:
   m_GameObject: {fileID: 1041288247052053313}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 78119c17566066541aa81166f4bdd33e, type: 2}
+  m_Controller: {fileID: 9100000, guid: d6bb9ae98e9cf194c8ac99e27a7ad888, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class Destructible: MonoBehaviour
 {
+    [SerializeField]
     public SpeedPower speedPower;
     public ExtraBombPower extraBombPower;
     public BlastRadiusPower blastRadiusPower;
+    private Animator animator;
+    public float DisappearDelay;
+
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {   
         if (other.gameObject.CompareTag("Explosion"))
         {
-            Destroy(gameObject);
+            animator.SetBool("ExplosionTouch", true);
+            StartCoroutine(DisappearAfterDelay(DisappearDelay));
             Vector2 position = transform.position;
 
             if (Random.value < 0.3)
@@ -35,5 +44,11 @@ public class Destructible: MonoBehaviour
                 }
             }
         }
+    }
+
+    IEnumerator DisappearAfterDelay(float Delay)
+    {
+        yield return new WaitForSeconds(Delay);
+        gameObject.SetActive(false);
     }
 }
