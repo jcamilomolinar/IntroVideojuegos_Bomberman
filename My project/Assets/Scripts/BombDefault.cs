@@ -72,51 +72,69 @@ public class BombDefault : MonoBehaviour
             other.isTrigger = false;
         }
     }
+    private Collider2D checkNextPos(Vector2 position, Vector2 direction)
+    {
+        Vector2 position2 = position;
+        return Physics2D.OverlapCircle(position2 + direction, 0);
 
+    }
     private void Explode(Vector2 position, Vector2 direction, int radius)
     {
-        position += direction;
-        Collider2D checkRadius = Physics2D.OverlapCircle(position, 0);
-        if (checkRadius != null)
-        {
-            if (checkRadius.CompareTag("Unbreakable")){
-                Debug.Log("Colision con bloque indestructible");
-                return;
-                }
-            
-        }
+        Collider2D NextPos = checkNextPos(position, direction);
 
-        position -= direction;
-        for (int i = 1; i < radius; i++) {
-            position += direction;
-            checkRadius = Physics2D.OverlapCircle(position, 0);
-            if (checkRadius != null)
+        if (NextPos != null)
+        {
+            if (NextPos.CompareTag("Unbreakable"))
             {
-                if (checkRadius.CompareTag("Unbreakable") || checkRadius.CompareTag("Breakable"))
+                return;
+            }
+
+            if (NextPos.CompareTag("Breakable"))
+            {
+                Explosion explosion = Instantiate(explosionEnd, position + direction, Quaternion.identity);
+                explosion.SetDirection(direction);
+                explosion.DestroyAfter(explosionDuration);
+                return;
+            }
+        }
+        for (int i = 0; i <= radius; i++)
+        {
+            position += direction;
+            NextPos = checkNextPos(position, direction);
+            if (NextPos != null)
+            {
+                if (NextPos.CompareTag("Unbreakable"))
                 {
-                    position -= direction;
-                    break;
+                    Explosion explosionfinale = Instantiate(explosionEnd, position, Quaternion.identity);
+                    explosionfinale.SetDirection(direction);
+                    explosionfinale.DestroyAfter(explosionDuration);
+                    return;
                 }
+                if (NextPos.CompareTag("Breakable"))
+                {
+                    Explosion explosionmid = Instantiate(explosionMiddle, position, Quaternion.identity);
+                    explosionmid.SetDirection(direction);
+                    explosionmid.DestroyAfter(explosionDuration);
+                    Explosion explosionfinale = Instantiate(explosionEnd, position + direction, Quaternion.identity);
+                    explosionfinale.SetDirection(direction);
+                    explosionfinale.DestroyAfter(explosionDuration);
+                    return;
+                }
+            }
+            if (i == radius)
+            {
+                Explosion explosionfinale = Instantiate(explosionEnd, position, Quaternion.identity);
+                explosionfinale.SetDirection(direction);
+                explosionfinale.DestroyAfter(explosionDuration);
+                return;
             }
             Explosion explosion = Instantiate(explosionMiddle, position, Quaternion.identity);
             explosion.SetDirection(direction);
             explosion.DestroyAfter(explosionDuration);
-        }
-
-        position += direction;
-        checkRadius = Physics2D.OverlapCircle(position, 0);
-        if (checkRadius != null)
-        {
-            if (checkRadius.CompareTag("Unbreakable"))
-            {
-                Debug.Log("Colision con bloque indestructible");
-                return;
-            }
 
         }
-        Explosion explosionFin = Instantiate(explosionEnd, position, Quaternion.identity);
-        explosionFin.SetDirection(direction);
-        explosionFin.DestroyAfter(explosionDuration);
+
+
     }
 
     // Update is called once per frame
