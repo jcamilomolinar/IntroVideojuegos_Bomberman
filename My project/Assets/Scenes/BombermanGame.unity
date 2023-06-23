@@ -4716,6 +4716,7 @@ GameObject:
   - component: {fileID: 929592705}
   - component: {fileID: 929592707}
   - component: {fileID: 929592706}
+  - component: {fileID: 929592708}
   m_Layer: 0
   m_Name: Skull
   m_TagString: Untagged
@@ -4731,8 +4732,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 929592704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -60.03, y: -9.84, z: 1.3375362}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -66.02, y: -18.53, z: 1.3375362}
+  m_LocalScale: {x: 1.3994, y: 1.3891, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -4778,7 +4779,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 15
+  m_SortingOrder: 6
   m_Sprite: {fileID: 44387462, guid: 5b9d20f83d916be45a9ec842276c8b3d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4810,6 +4811,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!61 &929592708
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929592704}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.008355439, y: 0.36850077}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.6818182, y: 0.95454544}
+    newSize: {x: 0.6818182, y: 0.95454544}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.58154917, y: 0.5996909}
+  m_EdgeRadius: 0
 --- !u!1001 &945869551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9020,6 +9047,7 @@ GameObject:
   - component: {fileID: 1201837947}
   - component: {fileID: 1201837949}
   - component: {fileID: 1201837948}
+  - component: {fileID: 1201837950}
   m_Layer: 0
   m_Name: Golem
   m_TagString: Untagged
@@ -9035,8 +9063,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1201837946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -62, y: -10.35, z: 1.3375362}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -48.002, y: -9.488, z: 1.3375362}
+  m_LocalScale: {x: 0.77, y: 1, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -9082,7 +9110,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 15
+  m_SortingOrder: 6
   m_Sprite: {fileID: 992686312, guid: 5b9d20f83d916be45a9ec842276c8b3d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9114,6 +9142,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!61 &1201837950
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201837946}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.019650042, y: 0.4695158}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1.3636364, y: 1.4090909}
+    newSize: {x: 1.3636364, y: 1.4090909}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.1082243, y: 0.8331318}
+  m_EdgeRadius: 0
 --- !u!1001 &1240663089
 PrefabInstance:
   m_ObjectHideFlags: 0
