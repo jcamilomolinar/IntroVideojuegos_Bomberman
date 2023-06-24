@@ -19,7 +19,7 @@ El proyecto presentado se basa en una recreación parcial del juego Bomberman pu
 
 ## Imagen y Video In-Game
 
-![Imagen gameplay 1]()
-![Imagen gameplay 2]()
-![Imagen gameplay 3]()
+![Imagen gameplay 1](https://github.com/jcamilomolinar/IntroVideojuegos_Bomberman/blob/main/ResourcesRM/Menu.PNG)
+![Imagen gameplay 2](https://github.com/jcamilomolinar/IntroVideojuegos_Bomberman/blob/main/ResourcesRM/Option.PNG)
+![Imagen gameplay 3](https://github.com/jcamilomolinar/IntroVideojuegos_Bomberman/blob/main/ResourcesRM/Gameplay.PNG)
 ![GIF del gameplay]()
