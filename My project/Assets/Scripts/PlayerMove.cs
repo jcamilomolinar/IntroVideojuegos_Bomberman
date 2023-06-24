@@ -90,7 +90,7 @@ public class PlayerMove : MonoBehaviour, IDamageable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {   
-        if (collision.gameObject.CompareTag("Explosion"))
+        if (collision.gameObject.CompareTag("Explosion")|collision.gameObject.CompareTag("Enemy"))
         {
             enableInput = false;
             TakeHit();

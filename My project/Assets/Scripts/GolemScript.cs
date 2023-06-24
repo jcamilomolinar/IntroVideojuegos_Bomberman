@@ -13,7 +13,6 @@ public class GolemScript : MonoBehaviour, IDamageable
     public int TotalHealthPoints { get; private set; }
     public int HealthPoints { get; private set; }
 
-
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -62,12 +61,6 @@ public class GolemScript : MonoBehaviour, IDamageable
                     animator.SetBool("Down", true);
                 }
             }
-        }
-        else {
-            animator.SetBool("Right", false);
-            animator.SetBool("Left", false);
-            animator.SetBool("Up", false);
-            animator.SetBool("Down", false);
         }
 
         previousPosition = currentPosition;
