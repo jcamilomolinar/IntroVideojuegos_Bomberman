@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: d88628ab046b0af4fa4d63f2771dab28
+  - enabled: 1
     path: Assets/Scenes/BombermanGame.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Options.unity
+    guid: 6a23c8dd00fef4449b64e5597ec0c2b3
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 024f304b820b23349bec7520b9bf628b
   m_configObjects: {}
