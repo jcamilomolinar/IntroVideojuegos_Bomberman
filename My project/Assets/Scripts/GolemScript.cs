@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkullScript : MonoBehaviour, IDamageable
+public class GolemScript : MonoBehaviour, IDamageable
 {
     [SerializeField]
     public float speed = 1;
     public float DisappearDelay;
     private Rigidbody2D rb;
     private Animator animator;
-    public float counter;
 
     [field:SerializeField]
     public int TotalHealthPoints { get; private set; }
