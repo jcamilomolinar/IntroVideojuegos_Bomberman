@@ -14,7 +14,7 @@ El proyecto presentado se basa en una recreación parcial del juego Bomberman pu
 	* ***Semestre:*** 2023-1
 	* ***Docente:***  Juan Alejandro Álvarez Mesa
 + ***Version Unity:*** 2021.3.17f1
-+ Se usó el recurso AstarPathfindingProyect para el movimientos de los enemigos
++ Se usó el recurso AstarPathfindingProyect para el movimiento de los enemigos
 ***
 
 ## Imagen y Video In-Game
@@ -22,4 +22,4 @@ El proyecto presentado se basa en una recreación parcial del juego Bomberman pu
 ![Imagen gameplay 1](https://github.com/jcamilomolinar/IntroVideojuegos_Bomberman/blob/main/ResourcesRM/Menu.PNG)
 ![Imagen gameplay 2](https://github.com/jcamilomolinar/IntroVideojuegos_Bomberman/blob/main/ResourcesRM/Option.PNG)
 ![Imagen gameplay 3](https://github.com/jcamilomolinar/IntroVideojuegos_Bomberman/blob/main/ResourcesRM/Gameplay.PNG)
-![GIF del gameplay]()
+![GIF del gameplay](https://github.com/jcamilomolinar/IntroVideojuegos_Bomberman/blob/main/ResourcesRM/bomberman.gif)
