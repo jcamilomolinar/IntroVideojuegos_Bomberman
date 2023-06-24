@@ -9,6 +9,7 @@ public class SkullScript : MonoBehaviour, IDamageable
     public float DisappearDelay;
     private Rigidbody2D rb;
     private Animator animator;
+    public float counter;
 
     [field:SerializeField]
     public int TotalHealthPoints { get; private set; }
@@ -24,22 +25,19 @@ public class SkullScript : MonoBehaviour, IDamageable
     void Update()
     {   
         float randomValue = Random.value;
-
         if (randomValue < 0.25)
             {
                 animator.SetBool("Right", true);
                 animator.SetBool("Left", false);
                 animator.SetBool("Up", false);
                 animator.SetBool("Down", false);
-                StartCoroutine(DisappearAfterDelay(DisappearDelay));
-            } 
+            }
             else if (randomValue < 0.5)
             {
                 animator.SetBool("Right", false);
                 animator.SetBool("Left", true);
                 animator.SetBool("Up", false);
                 animator.SetBool("Down", false);
-                StartCoroutine(DisappearAfterDelay(DisappearDelay));
             }
             else if (randomValue < 0.75)
             {
@@ -47,7 +45,6 @@ public class SkullScript : MonoBehaviour, IDamageable
                 animator.SetBool("Left", false);
                 animator.SetBool("Up", true);
                 animator.SetBool("Down", false);
-                StartCoroutine(DisappearAfterDelay(DisappearDelay));
             }
             else
             {
@@ -55,7 +52,6 @@ public class SkullScript : MonoBehaviour, IDamageable
                 animator.SetBool("Left", false);
                 animator.SetBool("Up", false);
                 animator.SetBool("Down", true);
-                StartCoroutine(DisappearAfterDelay(DisappearDelay));
             }
     }
 
@@ -72,7 +68,6 @@ public class SkullScript : MonoBehaviour, IDamageable
     IEnumerator DisappearAfterDelay(float Delay)
     {
         yield return new WaitForSeconds(Delay);
-        gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -5107,6 +5107,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce1946acb55dd44d8420899a9b7e87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1
+  DisappearDelay: 10
+  counter: 0
+  <TotalHealthPoints>k__BackingField: 0
 --- !u!50 &929592710
 Rigidbody2D:
   serializedVersion: 4
