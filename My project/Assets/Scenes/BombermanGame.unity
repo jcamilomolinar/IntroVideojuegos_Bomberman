@@ -5487,7 +5487,7 @@ GameObject:
   - component: {fileID: 929592708}
   - component: {fileID: 929592709}
   m_Layer: 7
-  m_Name: Skull
+  m_Name: Animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5501,12 +5501,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 929592704}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.019, y: -0.507, z: 0}
+  m_LocalPosition: {x: -0.01, y: -0.48, z: -1.3375362}
   m_LocalScale: {x: 1.3994, y: 1.3891, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 1974549879}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &929592706
 SpriteRenderer:
@@ -5618,10 +5618,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce1946acb55dd44d8420899a9b7e87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
   DisappearDelay: 0.55
-  counter: 0
-  <TotalHealthPoints>k__BackingField: 0
+  <TotalHealthPoints>k__BackingField: 1
 --- !u!1001 &945869551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10300,7 +10298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DisappearDelay: 0.55
-  <TotalHealthPoints>k__BackingField: 1
+  <TotalHealthPoints>k__BackingField: 2
 --- !u!61 &1201837954
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13026,7 +13024,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1715183710}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -65.96, y: -8.9, z: 0}
+  m_LocalPosition: {x: -66, y: -8.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13230,7 +13228,7 @@ Transform:
   m_Children:
   - {fileID: 1201837947}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1759118797
 PrefabInstance:
@@ -15101,7 +15099,7 @@ GameObject:
   - component: {fileID: 1974549881}
   - component: {fileID: 1974549880}
   m_Layer: 0
-  m_Name: SkullEnemy
+  m_Name: Skull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15135,7 +15133,7 @@ Transform:
   m_Children:
   - {fileID: 929592705}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1974549880
 MonoBehaviour:
