@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
+using UnityEngine.Tilemaps;
 
 public class Destructible: MonoBehaviour
 {
@@ -10,12 +12,13 @@ public class Destructible: MonoBehaviour
     public BlastRadiusPower blastRadiusPower;
     private Animator animator;
     public float DisappearDelay;
+    public GameObject mapa;
 
     void Start()
     {
         animator = GetComponent<Animator>();
     }
-
+    
     void OnTriggerEnter2D(Collider2D other)
     {   
         if (other.gameObject.CompareTag("Explosion"))
@@ -23,6 +26,7 @@ public class Destructible: MonoBehaviour
             animator.SetBool("ExplosionTouch", true);
             StartCoroutine(DisappearAfterDelay(DisappearDelay));
             Vector2 position = transform.position;
+
 
             if (Random.value < 0.3)
             {
@@ -43,12 +47,31 @@ public class Destructible: MonoBehaviour
                     powerUp.transform.position = transform.position;
                 }
             }
+
+
+
+
+
         }
     }
 
     IEnumerator DisappearAfterDelay(float Delay)
     {
+
         yield return new WaitForSeconds(Delay);
         gameObject.SetActive(false);
+
+        Tilemap tilemap = mapa.GetComponent<Tilemap>();
+        BoundsInt cellBounds = tilemap.cellBounds;
+        Vector3Int minCell = cellBounds.min;
+        Vector3Int maxCell = cellBounds.max;
+
+        Vector3 minWorld = tilemap.CellToWorld(minCell);
+        Vector3 maxWorld = tilemap.CellToWorld(maxCell);
+        Bounds worldBounds = new Bounds((minWorld + maxWorld) * 0.5f, maxWorld - minWorld);
+        // Set some settings
+        var guo = new GraphUpdateObject(worldBounds);
+        guo.updatePhysics = true;
+        AstarPath.active.UpdateGraphs(guo);
     }
 }

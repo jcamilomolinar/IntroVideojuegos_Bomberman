@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
+using UnityEngine.Tilemaps;
+
 
 public class BombDefault : MonoBehaviour
 {
@@ -11,6 +14,7 @@ public class BombDefault : MonoBehaviour
     public float bombTimerLenght = 3f;
     public int bombStarterAmount = 1;
     public int bombsInventory;
+    public GameObject mapa;
 
     [Header("Explosion")]
     public Explosion explosionStart;
@@ -40,11 +44,14 @@ public class BombDefault : MonoBehaviour
     
     private IEnumerator PlaceBomb()
     {
+       
+
         Vector2 position = transform.position;
         position.x = Mathf.Round(position.x);
         position.y = Mathf.Round(position.y);
 
         GameObject bomb = Instantiate(bombGame, position, Quaternion.identity);
+        
         bombsInventory--;
 
         yield return new WaitForSeconds(bombTimerLenght);
@@ -52,6 +59,8 @@ public class BombDefault : MonoBehaviour
         position = bomb.transform.position;
         position.x = Mathf.Round(position.x);
         position.y = Mathf.Round(position.y);
+
+
 
         Explosion explosion = Instantiate(explosionStart, position, Quaternion.identity);
         explosion.DestroyAfter(explosionDuration);
@@ -62,9 +71,26 @@ public class BombDefault : MonoBehaviour
         Explode(position, Vector2.right, explosionRadius);
 
         Destroy(bomb.gameObject);
+
+
         bombsInventory++;
     }
 
+    private void FixedUpdate()
+    {
+        Tilemap tilemap = mapa.GetComponent<Tilemap>();
+        BoundsInt cellBounds = tilemap.cellBounds;
+        Vector3Int minCell = cellBounds.min;
+        Vector3Int maxCell = cellBounds.max;
+
+        Vector3 minWorld = tilemap.CellToWorld(minCell);
+        Vector3 maxWorld = tilemap.CellToWorld(maxCell);
+        Bounds worldBounds = new Bounds((minWorld + maxWorld) * 0.5f, maxWorld - minWorld);
+        // Set some settings
+        var guo = new GraphUpdateObject(worldBounds);
+        guo.updatePhysics = true;
+        AstarPath.active.UpdateGraphs(guo);
+    }
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Bomb"))
