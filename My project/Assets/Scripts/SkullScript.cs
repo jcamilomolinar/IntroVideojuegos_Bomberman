@@ -10,6 +10,7 @@ public class SkullScript : MonoBehaviour, IDamageable
     private Rigidbody2D rb;
     private Animator animator;
     public float counter;
+    private Vector2 previousPosition;
 
     [field:SerializeField]
     public int TotalHealthPoints { get; private set; }
@@ -23,36 +24,58 @@ public class SkullScript : MonoBehaviour, IDamageable
     }
 
     void Update()
-    {   
-        float randomValue = Random.value;
-        if (randomValue < 0.25)
+    {
+        Vector2 currentPosition = transform.position;
+        Vector2 difference = currentPosition - previousPosition;
+
+        if (difference.magnitude > 0.01f)
+        {
+            if (Mathf.Abs(difference.x) > Mathf.Abs(difference.y))
             {
-                animator.SetBool("Right", true);
-                animator.SetBool("Left", false);
-                animator.SetBool("Up", false);
-                animator.SetBool("Down", false);
-            }
-            else if (randomValue < 0.5)
-            {
-                animator.SetBool("Right", false);
-                animator.SetBool("Left", true);
-                animator.SetBool("Up", false);
-                animator.SetBool("Down", false);
-            }
-            else if (randomValue < 0.75)
-            {
-                animator.SetBool("Right", false);
-                animator.SetBool("Left", false);
-                animator.SetBool("Up", true);
-                animator.SetBool("Down", false);
+                // El objeto se está moviendo principalmente en el eje horizontal (izquierda o derecha)
+                if (difference.x > 0)
+                {
+                    animator.SetBool("Right", true);
+                    animator.SetBool("Left", false);
+                    animator.SetBool("Up", false);
+                    animator.SetBool("Down", false);
+                }
+                else
+                {
+                    animator.SetBool("Right", false);
+                    animator.SetBool("Left", true);
+                    animator.SetBool("Up", false);
+                    animator.SetBool("Down", false);
+                }
             }
             else
             {
-                animator.SetBool("Right", false);
-                animator.SetBool("Left", false);
-                animator.SetBool("Up", false);
-                animator.SetBool("Down", true);
+                // El objeto se está moviendo principalmente en el eje vertical (arriba o abajo)
+                if (difference.y > 0)
+                {
+                    animator.SetBool("Right", false);
+                    animator.SetBool("Left", false);
+                    animator.SetBool("Up", true);
+                    animator.SetBool("Down", false);
+                }
+                else
+                {
+                    animator.SetBool("Right", false);
+                    animator.SetBool("Left", false);
+                    animator.SetBool("Up", false);
+                    animator.SetBool("Down", true);
+                }
             }
+        }
+        else
+        {
+            animator.SetBool("Right", false);
+            animator.SetBool("Left", false);
+            animator.SetBool("Up", false);
+            animator.SetBool("Down", false);
+        }
+
+        previousPosition = currentPosition;
     }
 
     public void TakeHit()
@@ -63,11 +86,13 @@ public class SkullScript : MonoBehaviour, IDamageable
             speed = 0;
             StartCoroutine(DisappearAfterDelay(DisappearDelay));
         }
+
     }
 
     IEnumerator DisappearAfterDelay(float Delay)
     {
         yield return new WaitForSeconds(Delay);
+        Destroy(transform.parent.gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
