@@ -14,7 +14,12 @@ El proyecto presentado se basa en una recreación parcial del juego Bomberman pu
 	* ***Semestre:*** 2023-1
 	* ***Docente:***  Juan Alejandro Álvarez Mesa
 + ***Version Unity:*** 2021.3.17f1
-+ No se utilizaron paquetes extra
++ Se usó el recurso AstarPathfindingProyect para el movimientos de los enemigos
 ***
 
 ## Imagen y Video In-Game
+
+![Imagen gameplay 1]()
+![Imagen gameplay 2]()
+![Imagen gameplay 3]()
+![GIF del gameplay]()
