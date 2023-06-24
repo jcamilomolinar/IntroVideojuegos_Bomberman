@@ -131,11 +131,6 @@ public class BombDefault : MonoBehaviour
             Explosion explosion = Instantiate(explosionMiddle, position, Quaternion.identity);
             explosion.SetDirection(direction);
             explosion.DestroyAfter(explosionDuration);
-
         }
-
-
     }
-
-    // Update is called once per frame
 }
