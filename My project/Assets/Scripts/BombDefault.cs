@@ -84,12 +84,12 @@ public class BombDefault : MonoBehaviour
 
         if (NextPos != null)
         {
-            if (NextPos.CompareTag("Unbreakable"))
+            if (NextPos.CompareTag("NonDestructible"))
             {
                 return;
             }
 
-            if (NextPos.CompareTag("Breakable"))
+            if (NextPos.CompareTag("Destructible"))
             {
                 Explosion explosion = Instantiate(explosionEnd, position + direction, Quaternion.identity);
                 explosion.SetDirection(direction);
@@ -103,14 +103,14 @@ public class BombDefault : MonoBehaviour
             NextPos = checkNextPos(position, direction);
             if (NextPos != null)
             {
-                if (NextPos.CompareTag("Unbreakable"))
+                if (NextPos.CompareTag("NonDestructible"))
                 {
                     Explosion explosionfinale = Instantiate(explosionEnd, position, Quaternion.identity);
                     explosionfinale.SetDirection(direction);
                     explosionfinale.DestroyAfter(explosionDuration);
                     return;
                 }
-                if (NextPos.CompareTag("Breakable"))
+                if (NextPos.CompareTag("Destructible"))
                 {
                     Explosion explosionmid = Instantiate(explosionMiddle, position, Quaternion.identity);
                     explosionmid.SetDirection(direction);

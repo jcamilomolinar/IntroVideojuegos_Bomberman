@@ -8,6 +8,8 @@ TagManager:
   - Unbreakable
   - Breakable
   - Explosion
+  - Destructible
+  - NonDestructible
   layers:
   - Default
   - TransparentFX
