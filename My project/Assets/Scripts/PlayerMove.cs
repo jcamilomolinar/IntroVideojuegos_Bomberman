@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerMove : MonoBehaviour, IDamageable
 {
 
@@ -29,6 +29,12 @@ public class PlayerMove : MonoBehaviour, IDamageable
         {
             float moveX = Input.GetAxis("Horizontal");
             float moveY = Input.GetAxis("Vertical");
+
+            bool escDetect = Input.GetKeyDown(KeyCode.Escape);
+
+            if (escDetect) {
+                SceneManager.LoadSceneAsync(0);
+            }
             Vector2 movement = new Vector2(moveX, moveY) * speed;
             rb.velocity = movement;
 
@@ -86,6 +92,7 @@ public class PlayerMove : MonoBehaviour, IDamageable
     {
         yield return new WaitForSeconds(Delay);
         gameObject.SetActive(false);
+        SceneManager.LoadSceneAsync(3);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
