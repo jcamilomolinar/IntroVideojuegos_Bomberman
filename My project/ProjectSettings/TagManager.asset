@@ -10,6 +10,7 @@ TagManager:
   - Explosion
   - Destructible
   - NonDestructible
+  - Enemy
   layers:
   - Default
   - TransparentFX
